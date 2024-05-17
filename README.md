@@ -11,6 +11,8 @@ lab2: Spark-sql
 lab3: Machine learning with pyspark
 
 
+## SQL example
+
 ```Sql
 /*
 Question 8: Which items (note items, not parts) have been delivered by a supplier called Fisher-Price? Formulate without a subquery.
@@ -27,7 +29,7 @@ select jbitem.name from jbitem, jbsupplier where jbitem.supplier=jbsupplier.id a
 	| Squeeze Ball    |
 	+-----------------+
 
-	Selects the item name and shows the names for where supplier from item and id from supplier matches has correct supplier name.
+Selects the item name and shows the names for where supplier from item and id from supplier matches has correct supplier name.
 */
 
 
@@ -64,7 +66,7 @@ select name from jbcity where id IN (SELECT city from jbsupplier);
 
 /*
 Question 10: What is the name and color of the parts that are heavier than a card reader? 
-             Formulate this query using a subquery in the where-clause. (The SQL query must not contain the weight as a constant.)
+Formulate this query using a subquery in the where-clause. (The SQL query must not contain the weight as a constant.)
 */
 
 select name, color from jbparts where weight > (Select weight from jbparts where name = 'card reader');
@@ -79,11 +81,14 @@ select name, color from jbparts where weight > (Select weight from jbparts where
 	| card punch   | gray   |
 	+--------------+--------+
 	
-	Select names and color from parts db and conditionals weight on where weight is bigger than what it is for the card reader column
+Select names and color from parts db and conditionals weight on where weight is bigger than what it is for the card reader column
 */
 
 
 ```
+
+
+## Pyspark example 
 
 ```Python
 
